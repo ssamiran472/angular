@@ -28,9 +28,14 @@
 
   </div>
 -->
+<button (click)="addCourse()">add</button>
 <ul>
-<li *ngFor="let course of courses; index as i ">
+<!--<li *ngFor="let course of courses; index as i ">
   {{ i }}-{{course.name}}
 
-</li>
+</li>  -->
+  <li *ngFor="let course of courses; even as num; index as i ">
+    {{course.name}}<span *ngIf="num">(EVEN)</span>
+    <button (click)="remove(course)">remove</button>
+  </li>
 </ul>
