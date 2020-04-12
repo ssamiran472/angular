@@ -10,16 +10,27 @@
 </ng-template>
 
 <courses></courses>-->
-<ul class="nav nav-pills">
-  <li [class.active]="viewModel == 'map'"> <a (click)="viewModel='map'">Map View</a></li>
-  <li [class.active] = "viewModel == 'list'"> <a (click)="viewModel='list'">List View</a></li>
+<!--  <ul class="nav nav-pills">
+    <li [class.active]="viewModel == 'map'">
+      <a (click)="viewModel='map'">Map View</a>
+    </li>
+    <li [class.active] = "viewModel == 'list'">
+    <a (click)="viewModel='list'">List View
+    </a>
+    </li>
+  </ul>
+
+  <div [ngSwitch]="viewModel">
+    <div *ngSwitchCase="'map'"> Map View Content </div>
+    <div *ngSwitchCase="'list'"> List View Content</div>
+    <div *ngSwitchDefault> default view Content</div>
+
+
+  </div>
+-->
+<ul>
+<li *ngFor="let course of courses; index as i ">
+  {{ i }}-{{course.name}}
+
+</li>
 </ul>
-
-<div [ngSwitch]="viewModel">
-  <div *ngSwitchCase="'map'"> Map View Content </div>
-  <div *ngSwitchCase="'list'"> List View Content</div>
-  <div *ngSwitchDefault> default view Content</div>
-
-
-</div>
-
